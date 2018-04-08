@@ -48,18 +48,46 @@ img {
 
 .navbar {
   font-weight: 800;
-  font-size: 14px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  font-size: 23px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /*height: 44px;*/
+}
+
+@media (min-width: 768px) {
+  .navbar-header {
+    width: 400px;
+  }
+
+  .navbar-nav {
+    margin-top: 44px;
+  }
+}
+
+.navbar-brand {
+  /*width: 149px;*/
+  height: 104px;
+  padding: 0 0 0 40px;
+}
+
+.navbar-header h1 {
+  color: #00A99D;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .navbar-inverse {
-  background: #2d2d2d;
+  background: #06040e;
   border-color: #2d2d2d;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
 .navbar-inverse .navbar-nav > .active > a {
-  background-color: #ff7878;
+  color: #00A99D;
 }
 
 .navbar-inverse .navbar-brand {
