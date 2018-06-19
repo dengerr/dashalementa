@@ -1,21 +1,9 @@
-# Copyright 2016 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# [START app]
+# codign: utf-8
 import logging
 
 from flask import Flask, render_template, request
+
+from models import Page
 
 
 app = Flask(__name__)
@@ -23,7 +11,44 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template('index.html')
+    pages = Page.query()
+    print 'zxcv'
+    for page in pages.iter():
+        print page
+    return render_template('index.html',
+            pages=pages,
+            )
+
+
+@app.route('/<slug>/')
+def by_slug(slug):
+    page = Page.get_by_id(slug)
+    print page
+    return render_template('base.html',
+            page=page,
+            )
+
+
+@app.route('/add/')
+def add():
+    if 1:
+        from db import pages
+        for idx, pg in enumerate(pages):
+            #page = Page(id=pg['slug'], **pg)
+            #page.idx = idx + 1
+            #page.put()
+            Page.get_or_insert(
+                pg['slug'],
+                idx=idx + 1,
+                **pg
+            )
+        pages = Page.query()
+        #for idx, page in enumerate(pages.iter()):
+            #page.idx = idx + 1
+            #page.id = page.slug
+            #page.put()
+    return render_template('index.html',
+            )
 
 
 @app.route('/form')
@@ -50,4 +75,4 @@ def server_error(e):
     # Log the error and stacktrace.
     logging.exception('An error occurred during a request.')
     return 'An internal error occurred.', 500
-# [END app]
+

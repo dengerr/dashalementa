@@ -150,12 +150,15 @@ h1 {
 }
 
 #services .row {
-  margin: 70px 0;
+  /*margin: 70px 0;*/
 }
 
+#services,
 #prices,
+#contacts,
 #reviews {
-  margin: 70px 0;
+  margin: 50px 0;
+  padding-top: 70px;
 }
 
 #contacts {
