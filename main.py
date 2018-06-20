@@ -1,7 +1,7 @@
 # codign: utf-8
 import logging
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 from models import Page
 
@@ -11,6 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
+    return redirect('/about/')
     pages = Page.query()
     print 'zxcv'
     for page in pages.iter():

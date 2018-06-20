@@ -23,12 +23,12 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/about/">обо мне</a></li>
-          <li><a href="/services/">услуги</a></li>
-          <li><a href="/">интерьеры</a></li>
-          <li><a href="/reviews/">отзывы</a></li>
-          <li><a href="/prices/">цены</a></li>
-          <li><a href="/contacts/">контакты</a></li>
+          <li{% if page.slug == "about" %} class="active"{% endif %}><a href="/about/">обо мне</a></li>
+          <li{% if page.slug == "services" %} class="active"{% endif %}><a href="/services/">услуги</a></li>
+          <li{% if page.slug == "interiors" %} class="active"{% endif %}><a href="/interiors/">интерьеры</a></li>
+          <li{% if page.slug == "reviews" %} class="active"{% endif %}><a href="/reviews/">отзывы</a></li>
+          <li{% if page.slug == "prices" %} class="active"{% endif %}><a href="/prices/">цены</a></li>
+          <li{% if page.slug == "contacts" %} class="active"{% endif %}><a href="/contacts/">контакты</a></li>
         </ul>
       </div>
     </div>
