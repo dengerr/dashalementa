@@ -11,7 +11,7 @@ pages = [
           <h1>Обо мне</h1>
         </div>
         <div class="col-lg-6 centered">
-          <img src="/static/img/dasha.webp">
+          <img src="/static/img/dasha.jpg">
         </div>
         <div class="col-lg-6">
           <p>
@@ -31,7 +31,7 @@ pages = [
     <div class="container">
       <div class="row centered">
         <!-- <div>
-          <img src="/static/img/services.webp" alt="">
+          <img src="/static/img/services.jpg" alt="">
         </div> -->
         <div class="col-lg-8 col-lg-offset-2">
           <h1>Услуги</h1>
@@ -100,7 +100,7 @@ pages = [
     <div class="container">
       <div class="row centered">
         <div>
-          <img src="/static/img/reviews.webp" alt="">
+          <img src="/static/img/reviews.jpg" alt="">
         </div>
       </div>
     </div>

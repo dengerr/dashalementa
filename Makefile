@@ -3,6 +3,4 @@ runserver:
 
 deploy:
 	~/soft/google-cloud-sdk/bin/gcloud app deploy
-
-deploy:
 	~/soft/google-cloud-sdk/bin/gcloud app browse
