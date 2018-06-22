@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return redirect('/about/')
+    return redirect('/examples/')
     pages = Page.query()
     print 'zxcv'
     for page in pages.iter():
