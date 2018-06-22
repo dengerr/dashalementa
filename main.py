@@ -23,9 +23,12 @@ def hello():
 
 @app.route('/<slug>/')
 def by_slug(slug):
-    page = Page.get_by_id(slug)
-    print page
-    text = open('html/{}.html'.format(page.slug)).read().decode('utf-8')
+    from db import pages
+    page = pages.get(slug)
+    if page:
+        text = open('html/{}.html'.format(slug)).read().decode('utf-8')
+    else:
+        text = ''
     return render_template('base.html',
             page=page,
             text=text,
@@ -35,13 +38,14 @@ def by_slug(slug):
 @app.route('/add/')
 def add():
     from db import pages
-    for idx, pg in enumerate(pages):
+    for idx, pg in enumerate(pages.values()):
         #page = Page(id=pg['slug'], **pg)
         #page.idx = idx + 1
         #page.put()
         Page.get_or_insert(
             pg['slug'],
             idx=idx + 1,
+            body=open('html/{}.html'.format(pg['slug'])).read().decode('utf-8')
             **pg
         )
     return redirect('/about/')
