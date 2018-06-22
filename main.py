@@ -25,31 +25,26 @@ def hello():
 def by_slug(slug):
     page = Page.get_by_id(slug)
     print page
+    text = open('html/{}.html'.format(page.slug)).read().decode('utf-8')
     return render_template('base.html',
             page=page,
+            text=text,
             )
 
 
 @app.route('/add/')
 def add():
-    if 1:
-        from db import pages
-        for idx, pg in enumerate(pages):
-            #page = Page(id=pg['slug'], **pg)
-            #page.idx = idx + 1
-            #page.put()
-            Page.get_or_insert(
-                pg['slug'],
-                idx=idx + 1,
-                **pg
-            )
-        pages = Page.query()
-        #for idx, page in enumerate(pages.iter()):
-            #page.idx = idx + 1
-            #page.id = page.slug
-            #page.put()
-    return render_template('index.html',
-            )
+    from db import pages
+    for idx, pg in enumerate(pages):
+        #page = Page(id=pg['slug'], **pg)
+        #page.idx = idx + 1
+        #page.put()
+        Page.get_or_insert(
+            pg['slug'],
+            idx=idx + 1,
+            **pg
+        )
+    return redirect('/about/')
 
 
 @app.route('/form')

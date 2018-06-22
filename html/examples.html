@@ -1,0 +1,56 @@
+<style>
+#examples {
+  margin: 0;
+  padding: 0;
+  max-height: 100vh;
+  overflow: hidden;
+}
+.cycle-slideshow img {
+  height: 100vh;
+  object-fit:cover; 
+}
+
+.cycle-pager {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+.cycle-pager span {
+  margin: 5px;
+  color: #dedede;
+  cursor: pointer;
+}
+span.cycle-pager-active {
+  color: #333333;
+}
+</style>
+
+  <div id="examples">
+        <div class="cycle-slideshow" 
+            data-cycle-fx=carousel
+            data-cycle-timeout=5000
+            data-cycle-carousel-visible=1
+            data-cycle-carousel-fluid=true
+            data-cycle-pager="#pager"
+            >
+            <img src="/static/examples/9d1730_ebe4351f8b0542688f6da6a332f2bf53~mv2_d_1921_1200_s_2.jpg">
+            <img src="/static/examples/9d1730_0595ef5f56e741fbbb9ade959d6ddfc6~mv2.jpg">
+            <img src="/static/examples/9d1730_70b2eeb9ce344650bb4d8e228c90ca68~mv2.jpg">
+            <img src="/static/examples/9d1730_fd3edd89124c4f00abda57f8f4afc4bd~mv2.jpg">
+            <img src="/static/examples/9d1730_67973e032f9d41cdb51df45e6088eab2~mv2.jpg">
+            <img src="/static/examples/9d1730_16123649c43049d98ef64c2dbdaa69a1~mv2.jpg">
+            <img src="/static/examples/9d1730_28e411aa334542338b82b061637a63a0~mv2.jpg">
+            <img src="/static/examples/9d1730_ab607cec34e64c6cab9b9b2bf58e8132~mv2.jpg">
+            <img src="/static/examples/9d1730_ac4615d6794743dfbcff620e8bf0c94e~mv2.jpg">
+            <img src="/static/examples/9d1730_11d1d6e0604346b3b307b5999111e925~mv2.jpg">
+            <img src="/static/examples/9d1730_c2d88b413ff94438a3b9e10b72bda5dd~mv2.jpg">
+            <img src="/static/examples/9d1730_e0f97233a58a4dd2888217090477ac3a~mv2.jpg">
+            <img src="/static/examples/9d1730_be5f7f9ed7d044ee9ea6c2098fb4addd~mv2.jpg">
+            <img src="/static/examples/9d1730_7f7b92f1acf047f69329622480e874c4~mv2.jpg">
+            <img src="/static/examples/9d1730_f24d5f2f1300451e8db80c56ee35389d~mv2.jpg">
+            <img src="/static/examples/9d1730_45ae412a8d4041f09c6464f2bed708b4~mv2.jpg">
+
+        </div>
+        <div class="cycle-pager" id="pager"></div>
+  </div>
