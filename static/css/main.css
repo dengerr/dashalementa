@@ -137,6 +137,10 @@ h1 {
   padding-bottom: 70px;
 }
 
+#interiors h2 {
+  color: white;
+}
+
 #interiors ul {
   display: flex;
   flex-flow: row wrap;
