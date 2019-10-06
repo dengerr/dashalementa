@@ -129,6 +129,54 @@ h1 {
   color: white;
 }
 
+#interiors {
+  background-color: #2d2d2d;
+  color: white;
+  margin-top: 50px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+#interiors ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#interiors li {
+  flex-grow: 1;
+  flex-basis: 320px;
+  list-style: none;
+  margin: 1% 1%;
+  text-align: center;
+}
+
+#interiors li a {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.folder-name {
+  color: white;
+  background-color: rgba(0, 169, 157, 0.32);
+  padding: 4px 0 6px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+#images {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#images a {
+  flex-grow: 1;
+  flex-basis: 320px;
+  margin: 2% 1%;
+  text-align: center;
+}
+
 #services {
   background-color: #2d2d2d;
   color: white;

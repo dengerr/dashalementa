@@ -4,3 +4,6 @@ runserver:
 deploy:
 	~/soft/google-cloud-sdk/bin/gcloud app deploy
 	~/soft/google-cloud-sdk/bin/gcloud app browse
+
+gen:
+	python gen_interiors.py

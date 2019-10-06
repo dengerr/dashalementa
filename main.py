@@ -17,8 +17,30 @@ def hello():
     for page in pages.iter():
         print page
     return render_template('index.html',
-            pages=pages,
-            )
+        pages=pages,
+    )
+
+
+@app.route('/interiors/')
+def interiors():
+    from db import pages
+    page = pages.get('interiors')
+    text = render_template('interiors.html', items=page['items'])
+    return render_template('base.html',
+        page=page,
+        text=text,
+    )
+
+
+@app.route('/interiors/<folder>/')
+def interior(folder):
+    from db import pages
+    page = pages.get('interiors')
+    text = render_template('interior.html', folder=folder, images=page['items'][folder])
+    return render_template('base.html',
+        page=page,
+        text=text,
+    )
 
 
 @app.route('/<slug>/')
@@ -30,9 +52,9 @@ def by_slug(slug):
     else:
         text = ''
     return render_template('base.html',
-            page=page,
-            text=text,
-            )
+        page=page,
+        text=text,
+    )
 
 
 @app.route('/add/')
@@ -67,7 +89,8 @@ def submitted_form():
         name=name,
         email=email,
         site=site,
-        comments=comments)
+        comments=comments,
+    )
 
 
 @app.errorhandler(500)

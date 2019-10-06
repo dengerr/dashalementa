@@ -1,0 +1,17 @@
+  <div id="interiors">
+    <div class="container">
+      <div id="images">
+        {% for image in images %}
+          <a href="/static/interiors/{{ folder }}/{{ image }}">
+            <img src="/static/interiors/{{ folder }}/thumb_{{ image }}" alt="">
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/lightgallery.min.js"></script>
+  <script>
+    lightGallery(document.getElementById('images'));
+  </script>
+
