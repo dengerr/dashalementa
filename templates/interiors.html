@@ -1,21 +1,6 @@
   <div id="interiors">
     <div class="container">
-      <!--
-      <div class="row">
-        {% for folder, images in items.items() %}
-          <div class="col-lg-3 col-md-4 col-xs-12 centered">
-            <a href="/interiors/{{ folder }}/">
-              <div class="folder-image">
-                <img src="/static/interiors/{{ folder }}/thumb_{{ images[0] }}" alt="">
-              </div>
-              <div class="folder-name">{{ folder }}</div>
-            </a>
-          </div>
-        {% endfor %}
-      </div>
-      -->
-
-      <ul class="row">
+      <ul>
         {% for folder, images in items.items() %}
           <li>
             <a href="/interiors/{{ folder }}/">
